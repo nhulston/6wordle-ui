@@ -1,12 +1,16 @@
-import Link from "next/link";
-import styles from '../styles/Home.module.css';
+import Navbar from "../components/Navbar";
+import Grid from "../components/Grid";
+import Keyboard from "../components/Keyboard";
+import {pickRandomWord} from "../util/WordleLogic";
 
 export default function Home() {
-  return (
-      <>
-          <div>
+    pickRandomWord();
 
-          </div>
-      </>
-  )
+    return (
+        <>
+            <Navbar/>
+            <Grid/>
+            <Keyboard/>
+        </>
+    );
 }
