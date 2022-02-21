@@ -11,6 +11,7 @@ import {
     YellowItem, WordCorrectItem
 } from "./Grid.style";
 import {getWord, isAWord, isWinner} from "../util/WordleLogic";
+import {setUsedLetters} from "./Keyboard";
 
 const Grid = () => {
     let [guesses, setGuesses] = useState({
@@ -51,14 +52,17 @@ const Grid = () => {
                         items[j] = (<GreenItem key={j} index={j}>
                             <GridText>{guessChar}</GridText>
                         </GreenItem>);
+                        setUsedLetters(guessChar, 2);
                     } else if (getWord().includes(guessChar)) {
                         items[j] = (<YellowItem key={j} index={j}>
                             <GridText>{guessChar}</GridText>
                         </YellowItem>);
+                        setUsedLetters(guessChar, 1);
                     } else {
                         items[j] = (<GrayItem key={j} index={j}>
                             <GridText>{guessChar}</GridText>
                         </GrayItem>);
+                        setUsedLetters(guessChar, 0);
                     }
                 }
             }
