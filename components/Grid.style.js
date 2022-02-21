@@ -189,3 +189,20 @@ export const GridTextEditing = styled(GridText)`
     line-height: 41px;
   }
 `;
+
+export const GreenNoAnimation = styled(GreenItem)`
+  animation: flipOpenGreen 0s forwards;
+`;
+
+export const YellowNoAnimation = styled(YellowItem)`
+  animation: flipOpenYellow 0s forwards;
+`;
+
+export const GrayNoAnimation = styled(GrayItem)`
+  animation: flipOpenGray 0s forwards;
+`;
+
+export const GridRowAbout = styled(GridRow)`
+  transform: scale(.8);
+  margin: 0 auto;
+`;
