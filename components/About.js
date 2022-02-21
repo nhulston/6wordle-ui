@@ -7,7 +7,7 @@ const About = () => {
         <AboutStyle>
             <AboutTitle>How to Play</AboutTitle>
             <Description>Guess the <strong>WORDLE</strong> in seven tries.</Description>
-            <Description>Each guess must be a valid five-letter word.</Description>
+            <Description>Each guess must be a valid six-letter word.</Description>
             <Description>Hit the enter button to submit.</Description>
 
             <AboutTitle>Example</AboutTitle>
