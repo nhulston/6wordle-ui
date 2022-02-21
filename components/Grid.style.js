@@ -6,6 +6,13 @@ export const GridStyle = styled.div`
   flex-direction: column;
   align-items: center;
 
+  @media (max-width: 335px) {
+    transform: scale(.9);
+  }
+  @media (max-width: 285px) {
+    transform: scale(.8);
+  }
+
   @media (max-height: 900px) {
     margin-top: 6vh;
   }
@@ -13,6 +20,14 @@ export const GridStyle = styled.div`
   @media (max-height: 800px) {
     margin-top: 3vh;
     transform: scale(.9);
+  }
+
+  @media (max-height: 690px) {
+    transform: scale(.8);
+  }
+
+  @media (max-height: 660px) {
+    transform: scale(.7);
   }
 `;
 
@@ -44,7 +59,7 @@ export const GridItem = styled.div`
 `;
 
 export const GreenItem = styled(GridItem)`
-  animation: flipOpenGreen .4s ${(props) => props.index * .4}s linear forwards;
+  animation: flipOpenGreen .3s ${(props) => props.index * .3}s linear forwards;
   background: ${(props) => props.theme.black};
   @keyframes flipOpenGreen {
     0% {
@@ -67,7 +82,7 @@ export const GreenItem = styled(GridItem)`
 `;
 
 export const WordCorrectItem = styled(GreenItem)`
-  animation: flipOpenGreen .4s ${(props) => props.index * .4}s linear forwards, bounceUp .5s ${(props) => 3 + (props.index * .2)}s linear;
+  animation: flipOpenGreen .3s ${(props) => props.index * .3}s linear forwards, bounceUp .5s ${(props) => 1.6 + (props.index * .2)}s linear;
   background: ${(props) => props.theme.black};
   
   @keyframes bounceUp {
@@ -87,7 +102,7 @@ export const WordCorrectItem = styled(GreenItem)`
 `;
 
 export const YellowItem = styled(GridItem)`
-  animation: flipOpenYellow .4s ${(props) => props.index * .4}s linear forwards;
+  animation: flipOpenYellow .3s ${(props) => props.index * .3}s linear forwards;
   background: ${(props) => props.theme.black};
   @keyframes flipOpenYellow {
     0% {
@@ -110,7 +125,7 @@ export const YellowItem = styled(GridItem)`
 `;
 
 export const GrayItem = styled(GridItem)`
-  animation: flipOpenGray .4s ${(props) => props.index * .4}s linear forwards;
+  animation: flipOpenGray .3s ${(props) => props.index * .3}s linear forwards;
   background: ${(props) => props.theme.black};
   @keyframes flipOpenGray {
     0% {

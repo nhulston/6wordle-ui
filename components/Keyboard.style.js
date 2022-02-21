@@ -8,6 +8,25 @@ export const KeyboardStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  @media (max-width: 570px) {
+    transform: scale(.9);
+  }
+  @media (max-width: 500px) {
+    transform: scale(.8);
+  }
+  @media (max-width: 430px) {
+    transform: scale(.7);
+  }
+  @media (max-width: 390px) {
+    transform: scale(.6);
+  }
+  @media (max-width: 335px) {
+    transform: scale(.5);
+  }
+  @media (max-width: 285px) {
+    transform: scale(.4);
+  }
 `;
 
 export const KeyboardRow = styled.div`
@@ -16,44 +35,11 @@ export const KeyboardRow = styled.div`
   margin: 3.5px 0;
 `;
 
-export const Key = styled.div`
+export const Key = styled.label`
   width: 45px;
   height: 60px;
   margin: 0 3px;
   border-radius: 8px;
-  
-  @media (max-width: 560px) {
-    width: 40px;
-    height: 55px;
-  }
-  
-  @media (max-width: 520px) {
-    width: 35px;
-    height: 50px;
-  }
-  
-  @media (max-width: 485px) {
-    width: 30px;
-    height: 45px;
-    margin: 0 2px;
-  }
-  
-  @media (max-width: 435px) {
-    width: 25px;
-    height: 40px;
-    margin: 0 1px;
-  }
-  
-  @media (max-height: 750px) {
-    width: 35px;
-    height: 50px;
-  }
-  
-  @media (max-height: 700px) {
-    width: 30px;
-    height: 45px;
-    margin: 0 2px;
-  }
 `;
 
 export const GreenKey = styled(Key)`
@@ -75,18 +61,6 @@ export const DarkGrayKey = styled(Key)`
 export const LongKey = styled(Key)`
   background: ${(props) => props.theme.lightGray};
   width: 80px;
-
-  @media (max-width: 390px) {
-    width: 65px;
-  }
-  
-  @media (max-width: 350px) {
-    width: 55px;
-  }
-  
-  @media (max-width: 310px) {
-    width: 45px;
-  }
 `;
 
 export const KeyText = styled.h1`
@@ -94,24 +68,7 @@ export const KeyText = styled.h1`
   text-align: center;
   margin: auto 0;
   line-height: 60px;
-  font-size: 1em;
-
-
-  @media (max-width: 560px) {
-    line-height: 55px;
-  }
-
-  @media (max-width: 520px) {
-    line-height: 50px;
-  }
-
-  @media (max-width: 485px) {
-    line-height: 45px;
-  }
-
-  @media (max-width: 435px) {
-    line-height: 40px;
-  }
+  font-size: 1.5em;
 
   @media (max-height: 750px) {
     line-height: 50px;
@@ -124,13 +81,13 @@ export const KeyText = styled.h1`
 
 export const LongKeyText = styled(KeyText)`
   font-weight: normal;
-  font-size: .85em;
-  
-  @media (max-width: 350px) {
-    font-size: .65em;
-  }
-  
-  @media (max-width: 310px) {
-    font-size: .5em;
-  }
+  font-size: 1.1em;
+`;
+
+export const BackIconWrapper = styled(LongKey)`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 5px;
+  width: 75px;
 `;

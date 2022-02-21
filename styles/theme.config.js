@@ -43,4 +43,35 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: center;
     cursor: pointer;
   }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(.3, .3, .3);
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .zoomIn {
+    animation-name: zoomIn;
+  }
+
+  @keyframes zoomOut {
+    from {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+      transform: scale3d(.3, .3, .3);
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .zoomOut {
+    animation-name: zoomOut;
+  }
 `;

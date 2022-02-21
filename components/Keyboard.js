@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {
+    BackIconWrapper,
     DarkGrayKey,
     GreenKey,
     KeyboardRow,
@@ -9,6 +10,8 @@ import {
     LongKey,
     LongKeyText, YellowKey
 } from "./Keyboard.style";
+import {RiDeleteBack2Line} from "react-icons/ri";
+import {handleKeyPress} from "./Grid";
 
 export function setUsedLetters(letter, value) {}
 
@@ -18,7 +21,7 @@ const Keyboard = () => {
     setUsedLetters = function(letter, value) {
         if (!usedLetters.has(letter) || value === 2) {
             usedLetters.set(letter, value);
-            setTimeout(() => setUsedLettersState(new Map(usedLetters)), 2500);
+            setTimeout(() => setUsedLettersState(new Map(usedLetters)), 1800);
         }
     }
 
@@ -31,14 +34,14 @@ const Keyboard = () => {
             if (usedLetters.has(l)) {
                 const val = usedLetters.get(l);
                 if (val === 0) {
-                    rowArray[index] = ( <DarkGrayKey key={index}><KeyText>{l}</KeyText></DarkGrayKey> );
+                    rowArray[index] = ( <DarkGrayKey key={index} onClick={() => handleKeyPress(l)}><KeyText>{l}</KeyText></DarkGrayKey> );
                 } else if (val === 1) {
-                    rowArray[index] = ( <YellowKey key={index}><KeyText>{l}</KeyText></YellowKey> );
+                    rowArray[index] = ( <YellowKey key={index} onClick={() => handleKeyPress(l)}><KeyText>{l}</KeyText></YellowKey> );
                 } else {
-                    rowArray[index] = ( <GreenKey key={index}><KeyText>{l}</KeyText></GreenKey> );
+                    rowArray[index] = ( <GreenKey key={index} onClick={() => handleKeyPress(l)}><KeyText>{l}</KeyText></GreenKey> );
                 }
             } else {
-                rowArray[index] = ( <LightGrayKey key={index}><KeyText>{l}</KeyText></LightGrayKey> );
+                rowArray[index] = ( <LightGrayKey key={index} onClick={() => handleKeyPress(l)}><KeyText>{l}</KeyText></LightGrayKey> );
             }
         });
     };
@@ -59,9 +62,11 @@ const Keyboard = () => {
             </KeyboardRow>
 
             <KeyboardRow>
-                <LongKey><LongKeyText>ENTER</LongKeyText></LongKey>
+                <LongKey onClick={() => handleKeyPress('Enter')}><LongKeyText>ENTER</LongKeyText></LongKey>
                 {thirdRow}
-                <LongKey><LongKeyText>DELETE</LongKeyText></LongKey>
+                <BackIconWrapper onClick={() => handleKeyPress('Backspace')}><RiDeleteBack2Line
+                    size="35px"
+                    color="white"/></BackIconWrapper>
             </KeyboardRow>
         </KeyboardStyle>
     );
